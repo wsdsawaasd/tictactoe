@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h3>TicTacToe</h3>
+<p id="result">
+<input type="button" value="ChangeOnX" onclick="ChangeOnX()">
+<input type="button" value="ChangeOnO" onclick="ChangeOnO()">
+<script>
+    let data = "";
+    let board = [];
+    for (let i = 0; i < 8; i++) {
+        board[i] = ['.', '.', '.', '.', '.', '.', '.', '.'];
+    }
+    for (let i = 0; i < 8; i++) {
+        data += '<br/>';
+        for (let j = 0; j < 8; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+        }
+    }
+        data += '<br/><br/><input type="button" value="ChangeOnX" onclick="ChangeOnX()"><input type="button" value="ChangeOnO" onclick="ChangeOnO()">';
+       document.getElementById("result").innerHTML = data;
+
+    function ChangeOnX() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        board[positionX][positionY] = "x";
+        data = "";
+        for (let i = 0; i < 8; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 8; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        data += '<br/><br/><input type="button" value="ChangeOnX" onclick="ChangeOnX()"><input type="button" value="ChangeOnO" onclick="ChangeOnO()">';
+       document.getElementById("result").innerHTML = data
+    }
+    function ChangeOnO() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        board[positionX][positionY] = "o";
+        data = "";
+        for (let i = 0; i < 8; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 8; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        data += '<br/><br/><input type="button" value="ChangeOnX" onclick="ChangeOnX()"><input type="button" value="ChangeOnO" onclick="ChangeOnO()">';
+        document.getElementById("result").innerHTML = data
+    }
+
+</script>
+</body>
+</html>
